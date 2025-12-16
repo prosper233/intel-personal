@@ -11,6 +11,8 @@ import {
   ScrollView,
 } from 'react-native';
 import { router } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function SignupScreen() {
   const [name, setName] = useState('');
@@ -24,7 +26,8 @@ export default function SignupScreen() {
     // Add registration logic here
     if (name && email && phone && password && confirmPassword && agreeToTerms) {
       if (password === confirmPassword) {
-        router.push('/(app)/post');
+        router.push('/location/location'); 
+
       } else {
         alert('Passwords do not match');
       }
